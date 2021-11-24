@@ -11,7 +11,7 @@ return [
         'notifications' => [
             \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckFailed::class => ['mail'],
             \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckRecovered::class => ['mail'],
-            \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckSucceeded::class => [],
+            \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckSucceeded::class => ['mail'],
 
             \Spatie\UptimeMonitor\Notifications\Notifications\CertificateCheckFailed::class => ['slack'],
             \Spatie\UptimeMonitor\Notifications\Notifications\CertificateExpiresSoon::class => ['slack'],
@@ -22,13 +22,13 @@ return [
          * The location from where you are running this Laravel application. This location will be
          * mentioned in all notifications that will be sent.
          */
-        'location' => '',
+        'location' => 'Jose Laptop',
 
         /*
          * To keep reminding you that a site is down, notifications
          * will be resent every given number of minutes.
          */
-        'resend_uptime_check_failed_notification_every_minutes' => 60,
+        'resend_uptime_check_failed_notification_every_minutes' => 15,
 
         'mail' => [
             'to' => ['peperroniso@hotmail.com'],
@@ -102,7 +102,7 @@ return [
          * Fire `Spatie\UptimeMonitor\Events\MonitorFailed` event only after
          * the given number of uptime checks have consecutively failed for a monitor.
          */
-        'fire_monitor_failed_event_after_consecutive_failures' => 2,
+        'fire_monitor_failed_event_after_consecutive_failures' => 1,
 
         /*
          * When reaching out to sites this user agent will be used.
